@@ -1,0 +1,18 @@
+body{
+    background-image: url(images/camel.gif);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+p.copyright{
+    color:#f277b2;
+    font-style: italic;
+}
+ol ol ul{
+    list-style-type: circle;
+}
+ol{
+    list-style-type:upper-roman;
+}
+ol ol{
+    list-style-type: decimal;
+}

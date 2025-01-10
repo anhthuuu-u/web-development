@@ -1,0 +1,10 @@
+thead tr{
+    color: white;
+    background-color: chartreuse;
+}
+tr:nth-child(2n){
+    background-color: #c6fda2;
+}
+table, th, td {
+    border: 3px solid #a5d186;
+  }
