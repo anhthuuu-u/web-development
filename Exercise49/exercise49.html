@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Exercise 49</title>
+        <link href="style_49.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1>Online Classifieds Search Form</h1>
+        <hr/>
+        <form>
+            <div>
+                <h4>1) Search for a Classified in the following sections: </h4>
+                <input type="radio" value="employ" name="classified">Employment
+                <input type="radio" value="personal" name="classified">Personal
+                <br/>
+                <input type="radio" name="classified" value="sale" checked="checked">For Sales
+                <input type="radio" name="classified" value="miscellanecus" id="miscell">Miscellanecus
+                <br/>
+                <input type="radio" name="classified" value="housing">Housing
+                <input type="radio" name="classified" value="all" id="all">All of the above
+            </div>
+            <div>
+                <h4>2) Search the following publication:</h4>
+                <input type="checkbox" value="midwest">Midwest Time 
+                <input type="checkbox" value="mordennew" id="mordennew">Morden News
+                <input type="checkbox" value="employmenttoday" id="employtoday">Employment Today
+                <br/>
+                <input type="checkbox" value="greatlake">GreatLakes Classifieds 
+                <input type="checkbox" value="middleton">Middleton Daily
+                <input type="checkbox" value="cashtown">Cashtown Daily News
+            </div>
+            <div>
+                <h4>3) Form to</h4>
+                <input type="date" id="from"> 
+                <div id="to_text">to</div>
+                <input type="date" id="to">
+            </div>
+            <div class="comment">
+                <h4>4) Enter a few keywords to describe the classified</h4>
+                <input type="text" size="100">
+            </div>
+            <div>
+                <h4>5) Click one of the options below:</h4>
+                <input type="image" src="images/Search.gif" id="search_btn">
+                <a href="https://github.com/">
+                    <img src="images/Help.gif">
+                </a>
+                <input type="image" src="images/Cancel.gif" >
+            </div>
+        </form>       
+    </body>
+</html>

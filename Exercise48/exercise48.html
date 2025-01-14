@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Exercise 48</title>
+        <link href="style_48.css" rel="stylesheet" type="text/css"
+    </head>
+    <body>
+        <center>
+            <img src="images/Jackson.gif">
+            <h2>Registration Form</h2>
+            <p>Register your Jackson Electronics products here</p>
+        </center>
+        <form>
+            <div>
+                <label for="firstname">First Name:</label>
+                <input id="firstname" type="text">
+                <label for="lasttname">Last Name:</label>
+                <input id="Lastname" type="text">
+            </div>
+            <div>
+                <label for="address1">Address #1:</label>
+                <input id="address1" type="text">
+            </div>
+            <div>
+                <label for="address2">Address #2:</label>
+                <input id="address2" type="text">
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input id="city" type="text">
+                <label for="state">State:</label>
+                <input id="state" type="text">
+                <label for="zipcode">Zip Code:</label>
+                <input id="zipcode" type="text">
+            </div>
+            <div>
+                <label for="country">Country:</label>
+                <input id="country" type="text" value="United States">
+            </div>
+            <hr/>
+            <div>
+                <label for="product">Product:</label>
+                <select nanme="product" id="product">
+                    <option value="scan">ScanMaster</option>
+                    <option value="scan1">ScanMaster1</option>
+                    <option value="scan2">ScanMaster2</option>
+                </select>
+            </div>
+            <div>
+                <label for="datepur">Date Purchased:</label>
+                <input id="datepur" type="text">
+            </div>
+            <div>
+                <label for="serial">Serial #:</label>
+                <input id="serial" type="text">
+            </div>
+            <div>
+                <label>Used for:</label>
+                <input id="home" type="radio" value="home" name="radiousedfor"> Home
+                <input id="education" type="radio" value="education" name="radiousedfor"> Educational Institution
+                <br/>
+                <input id="business" type="radio" value="business" checked="checked" name="radiousedfor">Business
+                <input id="other" type="radio" value="other" name="radiousedfor">Other
+                <br/>
+                <input id="business" type="radio" value="goverment" name="radiousedfor">Goverment
+            </div>
+            <div>
+                <label>System (check all that apply): </label>
+                <input type="checkbox" value="windows" name="win"> Windows
+                <input type="checkbox" value="UNIX" name="unix" id="unix">UNIX
+                <br/>
+                <input id="macintosh" type="checkbox" value="Macintosh" name="macin">Macintosh
+                <input id="other2" type="checkbox" value="Other" name="other">Other
+            </div>
+            <hr/>
+            <div>
+                <label for="comment">Comments?:</label>
+                <textarea id="comment" cols="60" rows="10"></textarea>
+            </div>
+            <div>
+                <input id="submit" type="submit" value="Click to register" onclick="javascript:alert('Register successfully')"> 
+                <input type="reset" value="Click to cancel" 
+            </div>
+        </form>
+    </body>
+</html>

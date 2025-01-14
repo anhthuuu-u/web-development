@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>Exercise 50</title>
+        <link href="style_50.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <center>
+            <img src="images/DeLong.jpg">
+        </center>
+        <h3>Travel Expense Report</h3>
+        <hr/>
+        <form>
+            <div>
+                <labe>1) First Name:</labe>
+                <input type="text">
+                <label>Last Name:</label>
+                <input type="text">
+            </div>
+            <div>
+                <label>2) Social Security Number:</label>
+                <input type="text">
+            </div>
+            <div>
+                <label>3) Department:</label>
+                <select name="department">
+                    <option value="accounting">Accounting</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="hr">HR</option>
+                </select>
+            </div>
+            <div>
+                <label>4) Describe the purpose of your trip.</label>
+                <textarea style="width: 700px;height: 100px;"></textarea>
+            </div>
+            <div>
+                <label>5) Itemize your travel expense</label>
+                <table border="1" style="width: 1000px;">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th >Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="date" size="10px">
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td >
+                                <select name="Category" style="width: fit-content">
+                                    <option value="meal">Meal</option>
+                                    <option value="hotel">Hotel</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="date">
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <select name="Category" style="width: fit-content;">
+                                    <option value="meal">Meal</option>
+                                    <option value="hotel">Hotel</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="date">
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td >
+                                <select name="Category" style="width: fit-content;">
+                                    <option value="meal">Meal</option>
+                                    <option value="hotel">Hotel</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="date">
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <td>
+                                <select name="Category" style="width: fit-content;">
+                                    <option value="meal">Meal</option>
+                                    <option value="hotel">Hotel</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <label>6) Have you submitted your receipts: </label>
+                <input type="radio" value="yes" name="submitted"> Yes
+                <input type="radio" value="no" name="submitted">No
+            </div>
+            <div>
+                <input type="submit" name="submitbtn" value="Submit" onclick="javascript:alert('successfully')">
+                <input type="reset" name="resetbtn" value="Reset">
+            </div>
+        </form>
+        <div>
+            <p>Question? Contact Debbie Larson in Accounting (ext.2150)</p>
+        </div>
+    </body>
+</html>

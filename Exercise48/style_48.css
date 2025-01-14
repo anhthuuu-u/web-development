@@ -1,0 +1,61 @@
+body{
+    background-color:cornflowerblue;
+}
+form{
+    width: 900px;
+    margin:auto
+}
+form div{
+    padding:10px;
+}
+#firstname{
+    margin-left: 120px;
+}
+#address1{
+    margin-left: 119px;
+}
+#address2{
+    margin-left: 119px;
+}
+#city{
+    margin-left: 164px;
+}
+#country{
+    margin-left: 139px;
+}
+#product{
+    margin-left: 142px;
+}
+#datepur{
+    margin-left: 91.5px;
+}
+#serial{
+    margin-left: 142px;
+}
+#home{
+    margin-left: 135px;
+}
+#education{
+    margin-left: 100px;
+}
+#business{
+    margin-left: 198px;
+}
+#other{
+    margin-left: 87px ;
+}
+#unix{
+    margin-left: 75px;
+}
+#macintosh{
+    margin-left: 199px;
+}
+#other2{
+    margin-left: 72px;
+}
+#comment{
+    margin-left: 115px;
+}
+#submit{
+    margin-left: 200px;
+}

@@ -1,0 +1,29 @@
+body{
+    background-color: #ffbe7e ;
+}
+.header{
+    background-color: #eee8ac;
+    border: 2px solid #7ff3f5;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.list{
+    background-color: #68fe9a;
+    float:right;
+}
+nav h4{
+    color: #8785b5;
+}
+nav h5{
+    color: #8785b5;
+}
+.content{
+    float: left;
+    width: 1050px;
+}
+div #imgsinger{
+    float: right;
+    padding-top:0%;
+}
+div #div1{
+    overflow: auto;}

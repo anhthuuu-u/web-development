@@ -1,0 +1,18 @@
+.box{
+    float:right;
+    background-color: #a8a742;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+div{
+    float:left;
+}
+p{
+    font-weight: lighter;
+}
+address{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 9pt;
+}

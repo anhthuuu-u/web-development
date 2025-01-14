@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Exercise 47</title>
+        <style>
+            thead,tfoot{
+                background-color: blue;
+                color: white;
+            }
+            tbody tr:nth-child(2n+1){
+                background-color: whitesmoke;
+            }
+            tbody tr:nth-child(2n){
+                background-color: pink;
+            }
+            tbody tr:hover{
+                background-color: yellow;
+                cursor: pointer;
+            }
+            thead tr:hover{
+                background-color: yellow;
+                cursor: pointer;
+            }
+            tfoot tr:hover{
+                background-color: yellow;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table border="1" style="width: 500px;">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã</th>
+                    <th>Tên</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>K174111253</td>
+                    <td>Trần Thị Yến Linh</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>K174111260</td>
+                    <td>Trần Trọng Nghiêm</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>K164060845</td>
+                    <td>Nguyễn Khiếu Thành Huy</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>K164060854</td>
+                    <td>Trịnh Thị Hồng Vân</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>K184111428</td>
+                    <td>Nguyễn Thị Tiên</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Designed by Tèo Đẹp Trai</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

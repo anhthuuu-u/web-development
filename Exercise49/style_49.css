@@ -1,0 +1,37 @@
+body{
+    background-color: #ccffff;
+}
+h1{
+    color:#fb1d1d ;
+}
+#miscell{
+    margin-left: 27.5px;
+}
+#all{
+    margin-left: 32.7px;
+}
+#mordennew{
+    margin-left: 59px;
+}
+#employtoday{
+    margin-left: 19px;
+}
+#from{
+    position: relative;
+    left:90px;
+    top: -40px;
+}
+#to{
+    position: relative;
+    left:250px;
+    top:-79px;
+}
+#to_text{
+    position:relative;
+    left:220px;
+    top:-60px
+}
+
+.comment{
+    margin-top: -80px;
+}
