@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Exercise 66</title>
+        <script>
+            var txt = "<sinhvien>";
+            txt+="<mssv>K123456789</mssv>";
+            txt+="<hoTen>Quách Thị Bán Bún Bò</hoTen>";
+            txt+="<ngaySinh>7/7/1997</ngaySinh>";
+            txt+="<gioiTinh>Nữ</gioiTinh>";
+            txt+="</sinhvien>"
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td colspan="2" style="background-color: chocolate;" align="center">Chi tiết thông tin sinh viên</td>
+            </tr>
+            <tr>
+                <td>Mã sinh viên</td>
+                <td id="mssv"></td>
+            </tr>
+            <tr>
+                <td>Họ tên</td>
+                <td id="hoTen"></td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td id="ngaySinh"></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td id="gioiTinh"></td>
+            </tr>
+        </table>
+        <script>
+            // Parse XML và lấy thông tin sinh viên
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(txt, "text/xml");
+            
+            var mssv = xmlDoc.getElementsByTagName("mssv")[0].childNodes[0].nodeValue;
+            var hoten = xmlDoc.getElementsByTagName("hoTen")[0].childNodes[0].nodeValue;
+            var ngaysinh = xmlDoc.getElementsByTagName("ngaySinh")[0].childNodes[0].nodeValue;
+            var gioitinh = xmlDoc.getElementsByTagName("gioiTinh")[0].childNodes[0].nodeValue;
+
+            // Hiển thị thông tin vào bảng
+            document.getElementById('mssv').innerText = mssv;
+            document.getElementById('hoTen').innerText = hoten;
+            document.getElementById('ngaySinh').innerText = ngaysinh;
+            document.getElementById('gioiTinh').innerText = gioitinh;
+
+            // Thêm sự kiện hover cho các dòng trong bảng
+            var rows = document.querySelectorAll("table tr");
+
+            rows.forEach(row => {
+                row.addEventListener("mouseover", () => {
+                    row.style.backgroundColor = "blue";
+                    row.style.color = "white";
+                });
+
+                row.addEventListener("mouseout", () => {
+                    row.style.backgroundColor = "white";
+                    row.style.color = "black";
+                });
+            });
+        </script>
+    </body>
+</html>

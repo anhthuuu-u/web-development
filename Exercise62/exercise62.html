@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Exercise 62</title>
+        <style>
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            th, td {
+              border: 1px solid black;
+              padding: 8px;
+              text-align: left;
+            }
+            tr {
+              transition: background-color 0.3s ease;
+            }
+            tr.default {
+              background-color: lightblue;
+            }
+            tr.highlight {
+              background-color: yellow;
+            }
+          </style>
+    </head>
+    <body>
+        <table border="1">
+           <thead>
+                <tr>
+                    <th style="width: 150px;">STT</th>
+                    <th style="width: 450px;">Tên</th>
+                </tr>
+           </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Nguyễn Thị Tự</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Trần Văn Kỷ</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Hồ Văn Nặng</td>
+                </tr>
+            </tbody>
+            
+        </table>
+        <script>
+           
+            const rows = document.querySelectorAll("table tbody tr");
+        
+            
+            rows.forEach(row => {
+              row.classList.add('default'); //default bg
+        
+              row.addEventListener('mouseover', () => {
+                row.classList.remove('default');
+                row.classList.add('highlight'); //tô highlight hàng
+              });
+        
+              row.addEventListener('mouseout', () => {
+                row.classList.remove('highlight');
+                row.classList.add('default'); 
+              });
+            });
+          </script>
+    </body>
+</html>

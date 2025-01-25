@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Exercise 55</title>
+        <script type="text/javascript">
+            function giaiPhuongTrinh()
+            {
+                // lấy 3 hệ số
+                a=document.getElementById('hesoa')
+                b=document.getElementById('hesob')
+                c=document.getElementById('hesoc')
+
+                a=eval(a)
+                b=eval(b)
+                c=eval(c)
+
+                nghiem=""
+                if (a==0 && b==0 && c==0)
+                {
+                    nghiem="Vô số nghiệm"
+                }
+                else if (a==0)
+                {
+                    if (b==0 && c!=0)
+                    {
+                        nghiem="Vô nghiệm"
+                    }
+                    else if (b!=0 && c!=0)
+                    {
+                        nghiem="x"+(-c/b) 
+                    }
+                }
+                
+                tdkq=document.getElementById('ketqua')
+                tdkq.innerText=nghiem
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <caption>Giải phương trình bậc 2</caption>
+            <tr>
+                <td>Hệ số a:</td>
+                <td>
+                    <input type="text" id="hesoa">
+                </td>
+            </tr>
+            <tr>
+                <td>Hệ số b:</td>
+                <td>
+                    <input type="text" id="hesob">
+                </td>
+            </tr>
+            <tr>
+                <td>Hệ số c:</td>
+                <td>
+                    <input type="text" id="hesoc">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" onclick="giaiPhuongTrinh()">Giải</button>
+                    <button type="reset">Tiếp</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Kết quả</td>
+                <td id="ketqua"></td>
+            </tr>
+        </table>
+    </body>
+</html>

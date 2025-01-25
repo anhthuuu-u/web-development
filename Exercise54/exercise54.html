@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Exercise 54</title>
+        <script type="text/javascript">
+            function timMax()
+            {
+                so1=math.sothu1.value
+                so1=eval(so1)
+                
+                so2=eval(math.sothu2.value)
+                so3=eval(math.sothu3.value)
+
+                max=Math.max(so1,so2,so3)
+                tdkqua=document.getElementById('ketqua')
+                tdkqua.innerText=max
+
+            }
+            function timMin()
+            {
+                so1=math.sothu1.value
+                so1=eval(so1)
+                
+                so2=eval(math.sothu2.value)
+                so3=eval(math.sothu3.value)
+
+                min=Math.min(so1,so2,so3)
+                tdkqua=document.getElementById('ketqua')
+                tdkqua.innerText=min
+            }
+            function timSin() 
+            {
+                so1=eval(math.sothu1.value)
+                sin=Math.sin(so1)
+
+                tdkqua=document.getElementById('ketqua')
+                tdkqua.innerText=sin
+            }
+            function timCos()
+            {
+                so1=eval(math.sothu1.value)
+                cosin=Math.cos(so1)
+
+                tdkqua=document.getElementById('ketqua')
+                tdkqua.innerText=cosin
+            }
+            function timMu()
+            {
+                so1=eval(math.sothu1.value)
+                so2=eval(math.sothu2.value)
+
+                mu=Math.pow(so1,so2)
+                tdkqua=document.getElementById('ketqua')
+                tdkqua.innerText=mu
+            }
+        </script>
+    </head>
+    <body>
+        <form id="math">
+            <table border="1">
+                <tr>
+                    <td>a(So Thu 1)</td>
+                    <td>
+                        <input type="text" id="sothu1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>a(So Thu 2)</td>
+                    <td>
+                        <input type="text" id="sothu2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>a(So Thu 3)</td>
+                    <td>
+                        <input type="text" id="sothu3">
+                    </td>
+                </tr>
+                <tr>
+                    <td>KET QUA</td>
+                    <td id="ketqua"></td>
+                </tr>
+            </table>
+            <button type="button" onclick="timMax()">MAX</button>
+            <button type="button" onclick="timMin()">MIN</button>
+            <button type="button" onclick="timSin()">sin(a)</button>
+            <button type="button" onclick="timCos()">Cos(a)</button>
+            <button type="button" onclick="timMu()">a^b</button>
+        </form>
+    </body>
+</html>

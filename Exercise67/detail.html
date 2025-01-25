@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chi tiết thông tin Sinh Viên</title>
+        <style>
+            table {
+                width: 50%;
+                margin: auto;
+                border-collapse: collapse;
+                border: 1px solid black;
+            }
+            th {
+                background-color: orange;
+                color: white;
+                text-align: center;
+            }
+            td, th {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+            h3 {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Chi tiết thông tin Sinh Viên</h3>
+        <table>
+            <tr>
+                <th>Mã Sinh Viên</th>
+                <td id="mssv"></td>
+            </tr>
+            <tr>
+                <th>Họ Tên</th>
+                <td id="hoten"></td>
+            </tr>
+            <tr>
+                <th>Ngày Sinh</th>
+                <td id="ngaysinh"></td>
+            </tr>
+            <tr>
+                <th>Giới Tính</th>
+                <td id="gioitinh"></td>
+            </tr>
+        </table>
+
+        <script>
+            // Lấy thông tin từ URL
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById("mssv").innerText = urlParams.get("mssv");
+            document.getElementById("hoten").innerText = urlParams.get("hoten");
+            document.getElementById("ngaysinh").innerText = urlParams.get("ngaysinh");
+            document.getElementById("gioitinh").innerText = urlParams.get("gioitinh");
+        </script>
+    </body>
+</html>

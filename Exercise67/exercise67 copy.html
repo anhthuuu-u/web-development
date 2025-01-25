@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <style>
+            tr:hover {
+                background-color: yellow;
+                cursor: pointer;
+            }
+
+            th {
+                background-color: orange;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            td, th {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Danh sách sinh viên</h3>
+        <table border="1" id="sortedtable">
+            <thead>
+                <tr>
+                    <th id="mssvhead">Mã sinh viên</th>
+                    <th id="namehead">Họ tên</th>
+                    <th id="birthhead">Ngày sinh</th>
+                    <th id="sexhead">Giới tính</th>
+                </tr>
+            </thead>
+            <tbody id="tbodysinhvien">
+            </tbody>
+        </table>
+        <script>
+            var dataset = "<sinhviens>";
+            dataset += "<sinhvien>";
+            dataset += "<mssv>K123456789</mssv>";
+            dataset += "<hoTen>Quách Thị Bán Bún Bò</hoTen>";
+            dataset += "<ngaySinh>7/7/1997</ngaySinh>";
+            dataset += "<gioiTinh>Nữ</gioiTinh>";
+            dataset += "</sinhvien>";
+            dataset += "<sinhvien>";
+            dataset += "<mssv>K12345000</mssv>";
+            dataset += "<hoTen>Hồng Lâu Mộng</hoTen>";
+            dataset += "<ngaySinh>2/2/1992</ngaySinh>";
+            dataset += "<gioiTinh>Nam</gioiTinh>";
+            dataset += "</sinhvien>";
+            dataset += "<sinhvien>";
+            dataset += "<mssv>K1674000</mssv>";
+            dataset += "<hoTen>Hồ Văn Đồ</hoTen>";
+            dataset += "<ngaySinh>2/7/1997</ngaySinh>";
+            dataset += "<gioiTinh>Nam</gioiTinh>";
+            dataset += "</sinhvien>";
+            dataset += "</sinhviens>";
+
+            var ascending = true;
+
+            function taidanhsachsinhvien() {
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(dataset, "text/xml");
+                var students = xmlDoc.getElementsByTagName("sinhvien");
+
+                var tbodysinhvien = document.getElementById("tbodysinhvien");
+                tbodysinhvien.innerHTML = "";
+
+                for (var i = 0; i < students.length; i++) {
+                    var sti = students[i];
+                    const mssv = sti.getElementsByTagName("mssv")[0].childNodes[0].nodeValue;
+                    const hoTen = sti.getElementsByTagName("hoTen")[0].childNodes[0].nodeValue;
+                    const ngaySinh = sti.getElementsByTagName("ngaySinh")[0].childNodes[0].nodeValue;
+                    const gioiTinh = sti.getElementsByTagName("gioiTinh")[0].childNodes[0].nodeValue;
+
+                    var tr = document.createElement("tr");
+
+                    var tdmssv = document.createElement("td");
+                    tdmssv.innerText = mssv;
+                    tr.appendChild(tdmssv);
+
+                    var tdhoten = document.createElement("td");
+                    tdhoten.innerText = hoTen;
+                    tr.appendChild(tdhoten);
+
+                    var tdngaysinh = document.createElement("td");
+                    tdngaysinh.innerText = ngaySinh;
+                    tr.appendChild(tdngaysinh);
+
+                    var tdgioitinh = document.createElement("td");
+                    tdgioitinh.innerText = gioiTinh;
+                    tr.appendChild(tdgioitinh);
+
+                    // Thêm sự kiện click vào dòng
+                    tr.addEventListener("click", function () {
+                        // Điều hướng đến trang chi tiết với thông tin từ dòng
+                        const url = `detail.html?mssv=${encodeURIComponent(mssv)}&hoten=${encodeURIComponent(hoTen)}&ngaysinh=${encodeURIComponent(ngaySinh)}&gioitinh=${encodeURIComponent(gioiTinh)}`;
+                        window.location.href = url;
+                    });
+
+                    tbodysinhvien.appendChild(tr);
+                }
+            }
+
+            function sortTable(columnIndex) {
+                var table = document.getElementById("sortedtable");
+                var rows = Array.from(table.querySelectorAll("tbody > tr"));
+
+                rows.sort(function(rowA, rowB) {
+                    var cellA = rowA.cells[columnIndex].textContent.trim();
+                    var cellB = rowB.cells[columnIndex].textContent.trim();
+
+                    if (!isNaN(Date.parse(cellA)) && !isNaN(Date.parse(cellB))) {
+                        return ascending
+                            ? new Date(cellA) - new Date(cellB)
+                            : new Date(cellB) - new Date(cellA);
+                    }
+
+                    if (!isNaN(cellA) && !isNaN(cellB)) {
+                        return ascending ? cellA - cellB : cellB - cellA;
+                    }
+
+                    return ascending
+                        ? cellA.localeCompare(cellB)
+                        : cellB.localeCompare(cellA);
+                });
+
+                ascending = !ascending;
+
+                rows.forEach(function(row) {
+                    table.querySelector("tbody").appendChild(row);
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("mssvhead").addEventListener("click", function () {
+                    sortTable(0);
+                });
+                document.getElementById("namehead").addEventListener("click", function () {
+                    sortTable(1);
+                });
+                document.getElementById("birthhead").addEventListener("click", function () {
+                    sortTable(2);
+                });
+                document.getElementById("sexhead").addEventListener("click", function () {
+                    sortTable(3);
+                });
+            });
+
+            taidanhsachsinhvien();
+        </script>
+    </body>
+</html>
