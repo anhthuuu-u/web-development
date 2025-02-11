@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Exercise 74</title>
+    </head>
+    <body>
+        <table border="1" style="border-collapse: collapse;">
+            <thead style="background-color: yellow;">
+                <tr>
+                    <th rowspan="2">Mã sinh viên</th>
+                    <th rowspan="2">Tên sinh viên</th>
+                    <th colspan="3">Điểm thành phần</th>
+                    <th rowspan="2">Điểm trung bình</th>
+                    <th rowspan="2">Kết quả</th>
+                </tr>
+                <tr>
+                    <td>Toán</td>
+                    <td>Lý</td>
+                    <td>Hóa</td>
+                </tr>
+            </thead>
+            <tbody id="studentbody">
+            </tbody>
+        </table>
+        <script>
+            var xhr = new XMLHttpRequest();
+                xhr.open("GET", "data.json", true); // 
+                xhr.send();
+
+                xhr.onreadystatechange = function () 
+                {
+                    if (xhr.readyState == 4 && xhr.status == 200) 
+                    {
+                        var students=JSON.parse(xhr.responseText);
+                        loadData(students)
+                    }
+                }
+            function loadData(students)
+            {
+                studenttable=document.getElementById("studentbody")
+                for(i=0;i<students.length;i++)
+                {
+                    student=students[i]
+                    tr=document.createElement("tr")
+
+                    tdMa=document.createElement("td")
+                    tdTen=document.createElement("td")
+                    tdToan=document.createElement("td")
+                    tdLy=document.createElement("td")
+                    tdHoa=document.createElement("td")
+                    tdTbinh=document.createElement("td")
+                    tdKqua=document.createElement("td")
+
+                    //lấy dữ liệu từng phần
+                    tdMa.innerText=student.Ma
+                    tdTen.innerText=student.Ten
+                    tdToan.innerText=student.MonHocs[0].Diem
+                    tdLy.innerText=student.MonHocs[1].Diem
+                    tdHoa.innerText=student.MonHocs[2].Diem
+                    diemTB=(student.MonHocs[0].Diem+student.MonHocs[1].Diem+student.MonHocs[2].Diem)/3
+                    tdTbinh.innerText=diemTB.toFixed(2)
+                    kqua=diemTB >=5? "Đậu": "Rớt"
+                    tdKqua.innerText=kqua
+
+                    tr.appendChild(tdMa)
+                    tr.appendChild(tdTen)
+                    tr.appendChild(tdToan)
+                    tr.appendChild(tdLy)
+                    tr.appendChild(tdHoa)
+                    tr.appendChild(tdTbinh)
+                    tr.appendChild(tdKqua)
+
+                    studenttable.appendChild(tr)
+    
+                }
+            }
+        </script>
+    </body>
+</html>

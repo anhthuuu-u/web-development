@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Exercise 56</title>
+        <style>
+            button 
+            {
+                width: 300px;
+            }
+        </style>
+        <script>
+            function nhapdulieu() 
+            {
+                document.getElementById('input').focus()
+            }
+            function demkytuhoa() 
+            {
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Sử dụng các hàm Xử lí Chuỗi</h1>
+        <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>Nhập dữ liệu</legend>
+                        <textarea rows="5" cols="30" id="input" name="input"></textarea>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>Kết quả</legend>
+                        <textarea rows="5" cols="30" id="ketqua" name="ketqua"></textarea>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="nhapdulieu()">Nhập dữ liệu</button>
+                </td>
+                <td>
+                    <button type="button" onclick="demkytuhoa()">Đếm ký tự hoa</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="inchuhoa()">In chữ hoa</button>
+                </td>
+                <td>
+                    <button type="button" onclick="intutrendong()">In mỗi từ trên mỗi dòng</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="inchuthuong()">In chữ thường</button>
+                </td>
+                <td>
+                    <button type="button" onclick="demsotu()">Đếm số từ</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="demsokytuthuong()">Đếm số ký tự thường</button>
+                </td>
+                <td>
+                    <button type="button" onclick="innguyenamphuam()">In nguyên âm, phụ âm</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button style="width: 600px;" onclick="xemweb()">Xem Website xử lí chuỗi w3c</button>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

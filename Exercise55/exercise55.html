@@ -1,71 +1,102 @@
 <html>
     <head>
-        <title>Exercise 55</title>
-        <script type="text/javascript">
-            function giaiPhuongTrinh()
+        <title>Giải phương trình bậc 2</title>
+        <script>
+            function giai_phuongtrinh_bac2()
             {
-                // lấy 3 hệ số
-                a=document.getElementById('hesoa')
-                b=document.getElementById('hesob')
-                c=document.getElementById('hesoc')
-
-                a=eval(a)
-                b=eval(b)
-                c=eval(c)
-
+                //alert("Muốn giải phương trình")
+                // formptb1.hesoa trả về đối tượng input là ô nhập liệu
+                //formptb1.hesoa.value trả về giá trị mà người dùng nhập vào nó
+                hsa=formptb2.hesoa.value
+                //vì dữ liệu nhập từ ô nhập liệu thì nó luôn luôn là chuỗi
+                // nên ta cần đổi qua số:
+                hsa=eval(hsa)
+                hsb=eval(formptb2.hesob.value)
+                hsc=eval(formptb2.hesoc.value)
                 nghiem=""
-                if (a==0 && b==0 && c==0)
-                {
-                    nghiem="Vô số nghiệm"
-                }
-                else if (a==0)
-                {
-                    if (b==0 && c!=0)
+                if (hsa==0 && hsb==0 && hsc==0)
                     {
-                        nghiem="Vô nghiệm"
+                        nghiem="Tùm lum nghiệm"
                     }
-                    else if (b!=0 && c!=0)
+                else if(hsa==0)
                     {
-                        nghiem="x"+(-c/b) 
+                        if(hsb==0 && hsc!=0)
+                        {
+                           nghiem="Vô nghiệm" 
+                        }
+                        else if (hsb!=0 && hsc!=0)
+                        {
+                            nghiem="x"+(-hsc/hsb)
+                        }
                     }
-                }
-                
-                tdkq=document.getElementById('ketqua')
-                tdkq.innerText=nghiem
+                else if (hsa!=0)
+                    {
+                        denta=hsb*hsb-4*hsa*hsc
+                        if(denta>0)
+                            {
+                                nghiem="Nghiệm x1= "+((-hsb+Math.sqrt(denta))/2*hsa)+" và nghiệm x2= "+((-hsb-Math.sqrt(denta))/2*hsa)
+                            }
+                        else if(denta==0)
+                            {
+                                nghiem="Nghiệm kép x1=x2=" + (-hsb/2*hsa)
+                            }
+                        else
+                            {
+                                nghiem="Phương trình vô nghiệm"
+                            }
+                    }
+                //để truy xuất tới thẻ htmk thông qua id:
+                //cụ thể là truy xuất thẻ td mà ta đặt id="ketqua"
+                tdketqua=document.getElementById("ketqua")
+                //hiển thị kết quả cho td:
+                tdketqua.innerText=nghiem
             }
         </script>
     </head>
     <body>
-        <table border="1">
-            <caption>Giải phương trình bậc 2</caption>
-            <tr>
-                <td>Hệ số a:</td>
-                <td>
-                    <input type="text" id="hesoa">
-                </td>
-            </tr>
-            <tr>
-                <td>Hệ số b:</td>
-                <td>
-                    <input type="text" id="hesob">
-                </td>
-            </tr>
-            <tr>
-                <td>Hệ số c:</td>
-                <td>
-                    <input type="text" id="hesoc">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <button type="button" onclick="giaiPhuongTrinh()">Giải</button>
-                    <button type="reset">Tiếp</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Kết quả</td>
-                <td id="ketqua"></td>
-            </tr>
-        </table>
+        <form name="formptb2">
+            <table border="1">
+                <caption style="font-size: 20px;">Phương trình bậc 1</caption>
+                <tbody>
+                    <tr>
+                        <td>
+                            Hệ số a:
+                        </td>
+                        <td>
+                            <input type="text" id="hesoa" name="hesoa">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hệ số b:
+                        </td>
+                        <td>
+                            <input type="text" id="hesob" name="hesob">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hệ số c:
+                        </td>
+                        <td>
+                            <input type="text" id="hesoc" name="hesoc">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">
+                            <input type="button" value="Giải" onclick="giai_phuongtrinh_bac2()">
+                        </td>
+                        <td>
+                            <input type="reset" value="Tiếp">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kết quả:</td>
+                        <td id="ketqua"></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </form>
     </body>
 </html>

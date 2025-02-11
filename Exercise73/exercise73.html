@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Exercise 73</title>
+        <script>
+            var sanphams = [
+                {
+                ma: "sp1",
+                ten: "Cocacola",
+                gia: 15000
+                },
+                {
+                ma: "sp2",
+                ten: "Pepsi",
+                gia: 25000
+                },
+                {
+                ma: "sp3",
+                ten: "Sting",
+                gia: 17000
+                },
+                ]
+        </script>
+    </head>
+    <body>
+        <table  border="1" style="border-collapse: collapse;">
+            <thead style="background-color: yellow;">
+                <tr>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Đơn giá</th>
+                </tr>
+            </thead>
+            <tbody id="productbody">
+            </tbody>
+        </table>
+        <script type="text/javascript">
+            productbody=document.getElementById("productbody")
+            for (i=0;i<sanphams.length;i++)
+            {
+                sanpham=sanphams[i]
+                tr=document.createElement('tr')
+                productbody.appendChild(tr)
+
+                tdMasp=document.createElement('td')
+                tdMasp.innerText=sanpham.ma
+                tr.appendChild(tdMasp)
+
+                tdTensp=document.createElement('td')
+                tdTensp.innerText=sanpham.ten
+                tr.appendChild(tdTensp)
+
+                tdGia=document.createElement('td')
+                tdGia.innerText=sanpham.gia
+                tr.appendChild(tdGia)  
+            }
+        </script>
+    </body>
+</html>

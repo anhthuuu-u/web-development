@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Exercise 72</title>
+        <script>
+            Sanphams=[
+            {
+            "MaSP": "sp_1xxx",
+            "TenSP": "DELL Inspiron 14NR",
+            "SoLuong": 100,
+            "DonGia": 150000
+            },
+            {
+            "MaSP": "sp_2yyyy",
+            "TenSP": "HP Inspiron 113",
+            "SoLuong": 130,
+            "DonGia": 140000
+            }
+            ]
+        </script>
+        <script type="text/javascript">
+            function  hienThiSanPham()
+            {
+                tbody=document.getElementById("productbody")
+                for(i=0;i<Sanphams.length;i++)
+            {
+                sanpham=Sanphams[i]
+                tr=document.createElement("tr")
+
+                tdMaSp=document.createElement("td")
+                tdMaSp.innerText=sanpham.MaSP
+                tr.appendChild(tdMaSp)
+
+                tdTenSp=document.createElement("td")
+                tdTenSp.innerText=sanpham.TenSP
+                tr.appendChild(tdTenSp)
+
+                tdSoluong=document.createElement('td')
+                tdSoluong.innerText=sanpham.SoLuong
+                tr.appendChild(tdSoluong)
+
+                tdDongia=document.createElement('td')
+                tdDongia.innerText=sanpham.DonGia
+                tr.appendChild(tdDongia)
+
+                tbody.appendChild(tr)
+            }
+                
+            }
+        </script>
+           
+        
+    </head>
+    <body>
+        <button onclick=hienThiSanPham()>Hiển thị</button>
+        <table border="1" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Tên</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                </tr>
+            </thead>
+            <tbody id="productbody">
+            </tbody>
+        </table>
+    </body>
+</html>
