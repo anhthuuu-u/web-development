@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Dự báo lãi suất ngân hàng realtime</title>
+    </head>
+    <body>
+        <h3>Lãi suất ngân hàng</h3>
+        <table border="1">
+            <tr>
+                <td>Ngân hàng</td>
+                <td>Lãi suất</td>
+            </tr>
+            <tbody id="tbodyrate">
+            </tbody>
+        </table>
+        <script>
+            api="https://gw.vnexpress.net/th?types=lai_suat_ngan_hang_v2"
+            var xhr =new XMLHttpRequest()
+                xhr.open("GET",api,true);
+                xhr.send();
+                xhr.onreadystatechange=function()
+                {
+                    if (xhr.readyState==4 && xhr.status==200)
+                    {
+                        //xu ly khi load duoc data
+                        // alert('Đọc dữ liệu thành công'+xhr.responseXML)
+                        var jsondata = xhr.responseText;
+                        jsonobject=JSON.parse(jsondata)
+                        hienthi_laisuat(jsonobject)
+                       
+                    }
+                    else
+                    {
+                        //xu ly khi khong load duoc data
+                    }
+                }
+                function hienthi_laisuat(jsonobject)
+                {
+                    laisuat=jsonobject.data.lai_suat_ngan_hang_v2.vnd.banks
+                    tbodyrate=document.getElementById("tbodyrate")
+                    for (i=0;i<laisuat.length;i++)
+                    {
+                        ls=laisuat[i]
+                        tr=document.createElement("tr")
+
+                        tdname=document.createElement("td")
+                        tdname.innerText=ls.name
+                        tr.appendChild(tdname)
+
+                        tdvalue=document.createElement("td")
+                        tdvalue.innerText=ls.value
+                        tr.appendChild(tdvalue)
+
+                        
+                        
+
+                        tbodyrate.appendChild(tr)
+                        
+                    }
+                }
+                hienthi_laisuat(jsonobject)
+        </script>
+    </body>
+</html>

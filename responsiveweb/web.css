@@ -1,0 +1,123 @@
+/*Mobile (<600px): Ẩn sidebar, main content chiếm toàn bộ chiều rộng.
+Tablet (601px - 900px): Main content chiếm 60%, sidebar 35%.
+Desktop (>900px): Main content chiếm 70%, sidebar 25%.*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thiết lập kiểu chung */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100vw;
+}
+
+/* Container với Flexbox */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 2 1 600px;
+    /* Co giãn linh hoạt, tối thiểu 600px */
+}
+
+.main-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1 1 300px;
+    /* Co giãn linh hoạt, tối thiểu 300px */
+    background-color: #f4f4f4;
+    padding: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100vw;
+    margin-top: 20px;
+}
+
+/* Media Queries cho Responsive */
+
+/* Mobile (dưới 600px) */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .sidebar {
+        display: none;
+        /* Ẩn sidebar trên mobile */
+    }
+
+    .main-content {
+        flex: 1 1 100%;
+        /* Chiếm toàn bộ chiều rộng */
+    }
+
+    .footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .main-content {
+        flex: 1 1 60%;
+        /* Chiếm 60% chiều rộng */
+    }
+
+    .sidebar {
+        flex: 1 1 35%;
+        /* Chiếm 35% chiều rộng */
+    }
+}
+
+/* Desktop (trên 900px) */
+@media (min-width: 901px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-content {
+        flex: 2 1 70%;
+        /* Chiếm 70% chiều rộng */
+    }
+
+    .sidebar {
+        flex: 1 1 25%;
+        /* Chiếm 25% chiều rộng */
+    }
+}

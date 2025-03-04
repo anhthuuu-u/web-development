@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>Exercise 75</title>
+        <style>
+            
+        </style>
+        <script>
+            sinhvien={
+                Ma:1,
+                Ten:'Trần Duy Thanh',
+                Sachs:
+                [
+                {Ma:'S1',Ten:'Hồng Lâu Mộng',Trang:100},
+                {Ma:'S2',Ten:'Tây Du Ký',Trang:200},
+                {Ma:'S3',Ten:'Tam Quốc Chí',Trang:90},
+                {Ma:'S4',Ten:'Bích Huyết Kiếm',Trang:70},
+                {Ma:'S5',Ten:'Anh Hùng Xạ Điêu',Trang:1000},
+                {Ma:'S6',Ten:'Thần Điêu Đại Hiệp',Trang:500},
+                {Ma:'S7',Ten:'Tần Thủy Hoàng',Trang:600},
+                {Ma:'S8',Ten:'Chiến Quốc',Trang:400},
+                {Ma:'S9',Ten:'Hán Sở Tranh Hùng',Trang:300},
+                {Ma:'S10',Ten:'Bảo Đao',Trang:700},
+                ],
+                ChiTiet:function(){
+                sv=$scope.sinhvien
+                return sv.Ma +" "+sv.Ten
+                }
+                }
+        </script>
+    </head>
+    <body>
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <td>
+                    Nhập mã:
+                </td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập tên:
+                </td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mã và tên:
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Danh sách Sách đang mượn</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table border="1" style="border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th>Mã sách</th>
+                                <th>Tên sách</th>
+                                <th>Số trang</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sachbody">
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <script>
+            sachbody=document.getElementById("sachbody")
+            for(i=0;i<sinhvien.Sachs.length;i++)
+            {
+                sach=sinhvien.Sachs[i]
+                tr=document.createElement("tr")
+                sachbody.appendChild(tr)
+
+                tdma=document.createElement('td')
+                tdma.innerText=sach.Ma
+                tr.appendChild(tdma)
+
+                tdten=document.createElement('td')
+                tdten.innerText=sach.Ten
+                tr.appendChild(tdten)
+
+                tdtrang=document.createElement('td')
+                tdtrang.innerText=sach.Trang
+                tr.appendChild(tdtrang)
+            }
+        </script>
+    </body>
+</html>

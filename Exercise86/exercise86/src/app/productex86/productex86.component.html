@@ -1,0 +1,21 @@
+<div class="product">
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <td>Product ID</td>
+            <td>{{product.productID}}</td>
+        </tr>
+        <tr>
+            <td>ProductName</td>
+            <td>{{product.productName}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{product.price}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img [src]="product.imageUrl" alt="Product Image">
+            </td>
+        </tr>
+    </table>
+</div>

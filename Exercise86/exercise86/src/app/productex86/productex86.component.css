@@ -1,0 +1,18 @@
+/* product.component.css */
+.product {
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-image img {
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
+}
