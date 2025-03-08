@@ -1,0 +1,35 @@
+<p>client-fashion works!</p>
+{{errMessage}}
+<h3 class="text-center text-white bg-dark p-3">Fashion Style</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <select class="form-select" [(ngModel)]="style">
+                <option value="All Style">ALL STYLE</option>
+                <option *ngFor="let style of styles">{{ style }}</option>
+            </select>
+        </div>
+        <div class="col">
+            <button class="btn btn-dark w-100" (click)="fashionsByStyle(style)">Search</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row" *ngFor="let style of styles">
+            <h4 class="text-center text-dark bg-warning p-3 mt-3">{{style}}</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 mb-2 mt-3" *ngFor="let fashion of tempFashionsByStyle(style)">
+                        <div class="card" *ngIf="fashion.style === style" (click)="detailFashion(fashion._id)">
+                            <img src="{{fashion.fashion_image}}" class="card-img-top"
+                                style="object-fit: cover; height: 400px;">
+                            <div class="card-body">
+                                <strong class="card-title h6">{{fashion.fashion_subject}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

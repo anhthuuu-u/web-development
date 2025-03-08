@@ -1,0 +1,41 @@
+<p>home works!</p>
+<!-- <div class="fashion-list">
+    <h2>STREET STYLE</h2>
+    <div class="fashion-grid">
+        <div class="fashion-item" *ngFor="let fashion of fashions">
+            <img [src]="fashion.thumbnail" alt="Fashion Image">
+            <p>{{ fashion.fashion_subject }}</p>
+            <button (click)="viewDetail(fashion._id)">Chi tiết</button>
+        </div>
+    </div>
+
+    <h2>TRENDS</h2>
+    <div class="fashion-grid">
+        <div class="fashion-item" *ngFor="let fashion of fashions">
+            <img [src]="fashion.thumbnail" alt="Fashion Image">
+            <p>{{ fashion.fashion_subject }}</p>
+            <button (click)="viewDetail(fashion._id)">Chi tiết</button>
+        </div>
+    </div>
+</div> -->
+<!-- Thanh tìm kiếm -->
+<div class="search-container">
+    <input type="text" placeholder="Nhập từ khóa..." [(ngModel)]="searchQuery">
+    <button >SEARCH</button>
+</div>
+
+<!-- Hiển thị danh sách Fashion theo nhóm Style -->
+<div class="fashion-section" *ngFor="let styleGroup of groupedFashions">
+    <h2 class="style-title">{{ styleGroup.style }}</h2>
+    <div class="fashion-grid">
+        <div class="fashion-item" *ngFor="let fashion of styleGroup.items" (click)="viewDetail(fashion._id)">
+            <div class="image-container">
+                <img [src]="fashion.fashion_image" alt="Fashion Image" class="fashion-thumbnail">
+                <div class="icon-overlay">
+                    <i class="fas fa-camera"></i> <!-- Icon máy ảnh -->
+                </div>
+            </div>
+            <p class="fashion-subject">{{ fashion.fashion_subject }}</p>
+        </div>
+    </div>
+</div>

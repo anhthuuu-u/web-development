@@ -1,0 +1,23 @@
+<p>fashion-detail works!</p>
+<!-- <div class="fashion-detail-container">
+    <h2>{{ fashion.fashion_subject }}</h2>
+    <p><strong>Style:</strong> {{ fashion.style }}</p>
+
+    
+    <img *ngIf="fashion.fashion_image" [src]="fashion.fashion_image" alt="Fashion Image" class="fashion-image">
+
+    
+    <div class="fashion-content" [innerHTML]="fashion.fashion_detail"></div>
+
+    <button routerLink="/home">Quay lại</button>
+</div> -->
+
+<h1>{{ fashion.fashion_subject }}</h1>
+
+<!-- Hiển thị hình ảnh -->
+<img *ngIf="fashion.fashion_image" [src]="fashion.fashion_image" width="400px">
+
+<!-- Hiển thị nội dung chi tiết -->
+<p [innerHTML]="fashion.fashion_detail"></p>
+
+<button (click)="goBack()">Quay lại</button>

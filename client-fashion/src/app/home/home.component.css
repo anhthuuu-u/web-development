@@ -1,0 +1,89 @@
+/* Style cho thanh tìm kiếm */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 300px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-container button {
+  padding: 8px 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.search-container button:hover {
+  background-color: gray;
+}
+
+/* Style cho từng nhóm Style */
+.fashion-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.style-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Grid layout */
+.fashion-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Style từng sản phẩm */
+.fashion-item {
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.fashion-item:hover {
+  transform: scale(1.05);
+}
+
+/* Style hình ảnh sản phẩm */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.fashion-thumbnail {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Overlay icon camera */
+.icon-overlay {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.fashion-subject {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}

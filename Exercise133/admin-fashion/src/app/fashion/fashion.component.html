@@ -1,0 +1,35 @@
+<p>fashion works!</p>
+{{errMessage}}
+<!-- <button routerLink="/fashion-add">Thêm mới một Fashion</button> -->
+<button (click)="addFashion()" routerLink="/fashion-add">Thêm mới một Fashion</button>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fashion Subject</th>
+            <th>Fashion Detail</th>
+            <th>Image</th>
+            <th>Created At</th>
+            <th>Actions</th> <!-- Thêm cột Actions -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fashion of fashions">
+            <td>{{fashion._id}}</td>
+            <td>{{fashion.fashion_subject}}</td>
+            <td>{{fashion.fashion_detail}}</td>
+            <td>
+                <img src="{{fashion.fashion_image}}" width="100px" height="100px">
+            </td>
+            <td>{{fashion.created_at | date:'short'}}</td>
+            <td>
+                <!-- Nút Xem Chi tiết -->
+                <button (click)="showDetail(fashion._id)">Chi tiết</button>
+                <!-- Nút Sửa -->
+                <button (click)="editFashion(fashion._id)">Sửa</button>
+                <!-- Nút Xóa (Có xác nhận) -->
+                <button (click)="deleteFashion(fashion._id)">Xóa</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

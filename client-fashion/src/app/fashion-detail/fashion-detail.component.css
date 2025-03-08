@@ -1,0 +1,8 @@
+.fashion-detail {
+    text-align: center;
+}
+
+.fashion-detail img {
+    width: 80%;
+    max-width: 600px;
+}
